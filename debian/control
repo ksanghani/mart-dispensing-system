@@ -1,0 +1,10 @@
+Source: @PRODUCT
+Section: unknown
+Priority: extra
+Maintainer: @EMAIL
+Standards-Version: 3.9.4
+
+Package: @PRODUCT
+Architecture: amd64
+Description: @SUMMARY
+ @DESCRIPTION
