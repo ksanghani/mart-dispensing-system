@@ -1,0 +1,20 @@
+# osx
+.DS_Store
+
+# node
+npm-debug.log
+
+# vim
+*.swp
+
+# deb
+*.changes
+*.dsc
+*.tar.gz
+
+# build
+debian/dist/
+dist/
+gulp-electron-cache/
+node_modules/
+release/

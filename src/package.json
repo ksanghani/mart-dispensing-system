@@ -1,0 +1,11 @@
+{
+  "main": "main.js",
+  "scripts": {
+    "postinstall": "cd node_modules/serialport && ./node_modules/.bin/node-pre-gyp rebuild --target=@@TARGET --arch=x64 --dist-url=https://atom.io/download/atom-shell"
+  },
+  "dependencies": {
+    "debug": "^2.2.0",
+    "wm-peripheral-client": "^2.0.2",
+    "wm-sds-client": "^1.0.0"
+  }
+}

@@ -1,0 +1,22 @@
+// when modifying transition-duration, make sure to adjust
+// transitionEnterTimeout and transitionLeaveTimeout in CoreLayout
+$transition-duration: 0.5s;
+$transition-timing-function: ease-in-out;
+
+.page-transition-enter {
+    opacity: 0;
+    transition: opacity $transition-duration $transition-timing-function;
+}
+
+.page-transition-enter.page-transition-enter-active {
+    opacity: 1;
+}
+
+.page-transition-leave {
+    opacity: 1;
+    transition: opacity $transition-duration $transition-timing-function;
+}
+
+.page-transition-leave.page-transition-leave-active {
+    opacity: 0;
+}

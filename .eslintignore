@@ -1,0 +1,6 @@
+blueprints/
+debian/
+dist/
+gulp-electron-cache/
+node_modules/
+release/
