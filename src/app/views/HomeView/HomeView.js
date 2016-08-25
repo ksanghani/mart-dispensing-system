@@ -14,18 +14,20 @@ export class HomeView extends Component {
 
     render () {
         return (
-            <div
-                className={classes.view}
-                onClick={() => this.props.senseProximity(true)}
-            >
-                <div className={classes.logo}>
-                    <Logo />
-                </div>
-                <TextBlock headline="Scan Your Receipt">
-                    to start the express pickup
-                </TextBlock>
-                <div className={classes.arrow}>
-                    <ArrowIcon box={true} size="4x"/>
+            <div className={classes.container}>
+                <div
+                    className={classes.view}
+                    onClick={() => this.props.senseProximity(true)}
+                >
+                    <div className={classes['logo-container']}>
+                        <Logo />
+                    </div>
+                    <TextBlock headline="Scan Your Receipt">
+                        to start the express pickup
+                    </TextBlock>
+                    <div className={classes.arrow}>
+                        <ArrowIcon box={true} size="4x"/>
+                    </div>
                 </div>
             </div>
         );
