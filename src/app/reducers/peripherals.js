@@ -25,14 +25,14 @@ export function scanBarcode (scannedBarcode) {
 
         if (scannedBarcode === '12341234') {
             dispatch(push('/receipt-not-found'));
+        } else {
+            dispatch(push('/pinpad'));
         }
 
         dispatch({
             type: BARCODE_SCANNED,
             scannedBarcode
         });
-
-        // dispatch(push('/pinpad'));
     };
 }
 

@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import classes from './TextBlock.scss';
+import Title from 'components/Title';
 
 export class TextBlock extends Component {
     static propTypes = {
@@ -10,7 +11,9 @@ export class TextBlock extends Component {
     render () {
         return (
             <div className={classes.layout}>
-                <div className={classes.headline}>{this.props.headline}</div>
+                <div className={classes['title-container']}>
+                    <Title size="large" letterCase="uppercase">{this.props.headline}</Title>
+                </div>
                 <p>{this.props.children}</p>
             </div>
         );
