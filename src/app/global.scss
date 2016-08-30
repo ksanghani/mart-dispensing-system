@@ -1,3 +1,8 @@
+h1 {
+    font-size: 56px;
+    font-weight: 400;
+}
+
 // when modifying transition-duration, make sure to adjust
 // transitionEnterTimeout and transitionLeaveTimeout in CoreLayout
 $transition-duration: 0.5s;

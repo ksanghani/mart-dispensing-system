@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { browserHistory } from 'react-router';
 import classes from './DispenseView.scss';
 import Button from 'components/Button';
 import ItemCount from 'components/ItemCount';
@@ -19,7 +20,7 @@ export default class DispenseView extends Component {
                         <ItemCount />
                     </div>
                     <div className={classes['button-container']}>
-                        <Button label="Dispense Item" onClick={() => {}} />
+                        <Button label="Dispense Item" onClick={() => { browserHistory.push('/dispensing'); }} />
                     </div>
                 </div>
             </div>

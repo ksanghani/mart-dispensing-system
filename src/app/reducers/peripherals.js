@@ -23,10 +23,19 @@ export function scanBarcode (scannedBarcode) {
     return (dispatch) => {
         dispatch(reset());
 
-        if (scannedBarcode === '12341234') {
-            dispatch(push('/receipt-not-found'));
-        } else {
-            dispatch(push('/pinpad'));
+        switch (scannedBarcode) {
+            case '11111111':
+                dispatch(push('receipt-not-found'));
+                break;
+            case '22222222':
+                dispatch(push('order-not-found'));
+                break;
+            case '33333333':
+                dispatch(push('order-fulfilled'));
+                break;
+            default:
+                dispatch(push('/pinpad'));
+                break;
         }
 
         dispatch({

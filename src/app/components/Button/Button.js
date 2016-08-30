@@ -5,7 +5,8 @@ export class Button extends Component {
     static propTypes = {
         label: PropTypes.string.isRequired,
         onClick: PropTypes.func.isRequired,
-        size: PropTypes.string
+        size: PropTypes.string,
+        hidden: PropTypes.bool
     };
 
     render () {

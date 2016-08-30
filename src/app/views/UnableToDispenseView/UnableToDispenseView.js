@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { browserHistory } from 'react-router';
 import classes from './UnableToDispenseView.scss';
 import Button from 'components/Button';
 import Link from 'components/Link';
@@ -21,7 +22,7 @@ export default class UnableToDispenseView extends Component {
                         <Link label="View Direction" onClick={() => {}}/>
                     </div>
                     <div className={classes['button-container']}>
-                        <Button label="Done" onClick={() => {}} />
+                        <Button label="Done" onClick={() => { browserHistory.push('/pinpad'); }} />
                     </div>
                 </div>
             </div>

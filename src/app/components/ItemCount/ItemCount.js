@@ -11,7 +11,7 @@ export class ItemCount extends Component {
             <div className={classes.layout}>
                 <span>1</span>
                 <span>of</span>
-                <span>2</span>
+                <span>1</span>
             </div>
         );
     }

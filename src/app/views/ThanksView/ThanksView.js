@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { browserHistory } from 'react-router';
 import classes from './ThanksView.scss';
 import Button from 'components/Button';
 import Logo from 'components/Logo';
@@ -21,7 +22,7 @@ export default class ThanksView extends Component {
                         If you have any quick questions or comments, contact us at CS@with.me <br /> or give us a call at 1-800-927-7671
                     </TextBlock>
                     <div className={classes['button-container']}>
-                        <Button label="Done" onClick={() => {}} />
+                        <Button label="Done" onClick={() => { browserHistory.push('/'); }} />
                     </div>
                 </div>
             </div>
