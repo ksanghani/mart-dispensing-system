@@ -1,0 +1,4 @@
+#!/bin/bash
+
+/usr/sbin/groupadd --gid 466 swm > /dev/null 2>&1 || true
+/usr/bin/getent passwd swm > /dev/null 2>&1 || /usr/sbin/useradd --uid 1001 --gid swm swm
