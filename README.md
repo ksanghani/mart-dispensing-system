@@ -52,12 +52,12 @@ locally as well.
 
 #### Build Docker Image
 ```sh
-docker build -t prototype-vending .
+docker build -t smart-dispensing-system .
 ```
 
 #### Build Application
 ```sh
-docker run -v $PWD:/root/app -e NODE_ENV=production prototype-vending
+docker run -v $PWD:/root/app -e NODE_ENV=production smart-dispensing-system
 ```
 
 ## Requirements
