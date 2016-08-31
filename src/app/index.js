@@ -4,6 +4,7 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore, routerMiddleware, push } from 'react-router-redux';
+import 'setup'; // see file for why this is necessary
 import logger from 'redux-logger';
 import createIpc from 'redux-electron-ipc';
 import { render } from 'react-dom';

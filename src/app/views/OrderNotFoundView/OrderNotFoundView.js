@@ -18,7 +18,7 @@ export default class OrderNotFoundView extends Component {
                         Sorry we can&rsquo;t find your order. Please make sure <br /> you&rsquo;re scanning a WithMe receipt for express pickup at this location.
                     </TextBlock>
                     <div className={classes['button-container']}>
-                        <Button label="Help" onClick={() => { browserHistory.push('/') }} />
+                        <Button label="Help" onClick={() => { browserHistory.push('/'); }} />
                     </div>
                 </div>
             </div>

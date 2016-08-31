@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "Cleaning artifacts..." && npm run clean
 echo "Installing dependencies..." && npm install
 echo "Downloading assets..." && npm run setup
@@ -18,6 +20,7 @@ replace ()
             s/@EMAIL/$EMAIL/g; \
             s/@TIMESTAMP/$TIMESTAMP/g; \
             s/@SUMMARY/$SUMMARY/g; \
+            s/@USER/$USER/g; \
             s/@DESCRIPTION/$DESCRIPTION/g" "$1" > "$2"
 }
 
@@ -37,6 +40,7 @@ DIST="dist/$PRODUCT-$VERSION"
 rm -rf dist/
 mkdir -p $DIST/debian/source
 mkdir -p $DIST/home/$USER/$PRODUCT
+mkdir -p $DIST/home/$USER/.scripts
 
 echo "1.0" > $DIST/debian/source/format
 echo "9" > $DIST/debian/compat
@@ -44,9 +48,15 @@ echo "9" > $DIST/debian/compat
 replace changelog $DIST/debian/changelog
 replace control $DIST/debian/control
 # replace files $DIST/debian/files
+replace postinst $DIST/debian/postinst
+replace start.sh $DIST/home/$USER/.scripts/start.sh
+chmod +x $DIST/home/$USER/.scripts/start.sh
+replace shortcut $DIST/home/$USER/$PRODUCT/$PRODUCT.desktop
 
+cp preinst $DIST/debian/preinst
 cp rules $DIST/debian/rules
 chmod +x $DIST/debian/rules
+cp ../icon.png $DIST/home/$USER/$PRODUCT/
 
 cp -R ../release/linux*/* $DIST/home/$USER/$PRODUCT
 
