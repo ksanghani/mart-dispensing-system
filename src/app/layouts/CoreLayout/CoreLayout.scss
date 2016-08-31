@@ -45,8 +45,11 @@ body {
 .help-icon-container {
     position: absolute;
     z-index: 9999;
-    bottom: 50%;
+    top: 50%;
     right: 0;
+    height: 120px;
+    width: 120px;
+    margin-top: -60px;
 }
 
 .overlay {
@@ -58,7 +61,7 @@ body {
     background: rgba(#000, .75);
     z-index: 0;
     opacity: 0;
-    transition: opacity .5s ease-in-out;
+    transition: opacity .3s ease-in-out;
 }
 
 .overlay-active {

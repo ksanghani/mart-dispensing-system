@@ -25,12 +25,9 @@ export function scanBarcode (scannedBarcode) {
 
         switch (scannedBarcode) {
             case '11111111':
-                dispatch(push('receipt-not-found'));
-                break;
-            case '22222222':
                 dispatch(push('order-not-found'));
                 break;
-            case '33333333':
+            case '22222222':
                 dispatch(push('order-fulfilled'));
                 break;
             default:

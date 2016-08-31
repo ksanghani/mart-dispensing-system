@@ -1,21 +1,5 @@
 .container {
     position: absolute;
     width: 100%;
-}
-
-.pinpad-container, .pinpad-message-container {
-    position: relative;
-    width: 50%;
-    float: left;
-}
-
-.pinpad-message-container {
-    display: table;
-    height: 702px;
-    border-right: 1px solid #000;
-    margin-top: 114px;
-    h1 {
-        display: table-cell;
-        vertical-align: middle;
-    }
+    padding-top: 127px;
 }
