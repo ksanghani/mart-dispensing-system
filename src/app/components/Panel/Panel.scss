@@ -1,0 +1,25 @@
+.layout {
+    background: #fff;
+    width: 680px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10001;
+    transform: translate3d(680px,0,0);
+    transition: transform .5s ease-in-out;
+    text-align: center;
+    padding-top: 94px;
+    p {
+        font-weight: 300;
+        font-size: 32px;
+        line-height: 48px;
+        letter-spacing: 1px;
+        margin-bottom: 96px;
+    }
+}
+
+.active {
+    transform: translate3d(0,0,0);
+}

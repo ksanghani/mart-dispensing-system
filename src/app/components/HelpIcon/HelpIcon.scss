@@ -1,0 +1,10 @@
+.box {
+    width: 120px;
+    height: 120px;
+    color: #fff;
+    background: #000;
+    text-align: center;
+    &:before {
+        line-height: 120px;
+    }
+}
