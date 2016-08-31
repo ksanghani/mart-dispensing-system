@@ -2,8 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { browserHistory } from 'react-router';
 import classes from './DispenseView.scss';
 import Button from 'components/Button';
-import ItemCount from 'components/ItemCount';
-import Title from 'components/Title';
+import TextBlock from 'components/TextBlock';
 
 
 export default class DispenseView extends Component {
@@ -15,12 +14,11 @@ export default class DispenseView extends Component {
         return (
             <div className={classes.container}>
                 <div className={classes.view}>
-                    <Title>Each item dispenses separately</Title>
-                    <div className={classes['item-count-container']}>
-                        <ItemCount />
-                    </div>
+                    <TextBlock headline="Ready to dispense 1 item">
+                        Each item dispenses separately
+                    </TextBlock>
                     <div className={classes['button-container']}>
-                        <Button label="Dispense Item" onClick={() => { browserHistory.push('/dispensing'); }} />
+                        <Button label="Dispense" onClick={() => { browserHistory.push('/dispensing'); }} />
                     </div>
                 </div>
             </div>

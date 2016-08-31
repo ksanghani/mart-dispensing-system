@@ -10,12 +10,8 @@ export class PinPadView extends Component {
     render () {
         return (
             <div className={classes.container}>
-                <div className={classes['pinpad-message-container']}>
-                    <h1>Enter last 4 digits <br /> of your mobile number</h1>
-                </div>
-                <div className={classes['pinpad-container']}>
-                    <PinPad />
-                </div>
+                <h1>Enter last 4 digits of your mobile number</h1>
+                <PinPad />
             </div>
         );
     }

@@ -1,11 +1,19 @@
 .layout {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.small {
+    font-size: 24px;
+}
+
+.medium {
+    font-size: 56px;
 }
 
 .large {
     font-size: 72px;
-    letter-spacing: 1px;
 }
 
 .uppercase {
