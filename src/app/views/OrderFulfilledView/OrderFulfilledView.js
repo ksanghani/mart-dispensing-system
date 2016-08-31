@@ -18,7 +18,7 @@ export default class OrderFulfilledView extends Component {
                         Our system shows that have picked up all items on this order. <br /> Please make sure you scan the correct receipt.
                     </TextBlock>
                     <div className={classes['button-container']}>
-                        <Button label="Help" onClick={() => { browserHistory.push('/') }} />
+                        <Button label="Help" onClick={() => { browserHistory.push('/'); }} />
                     </div>
                 </div>
             </div>

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=@VERSION
+Type=Application
+Terminal=false
+Exec=/home/@USER/.scripts/start.sh /home/@USER/Desktop/ --create-new
+Name=@SUMMARY
+Icon=/home/@USER/@PRODUCT/icon.png

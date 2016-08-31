@@ -1,6 +1,6 @@
 {
   "name": "smart-dispensing-system",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Smart Dispensing System Vending Application",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "author": "Mario Tacke <tacke.mario@gmail.com>",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "babel-core": "^6.11.4",
     "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.4",

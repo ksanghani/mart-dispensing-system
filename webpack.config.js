@@ -65,6 +65,9 @@ if (process.env.NODE_ENV === 'production') {
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            },
             output: {
                 comments: false
             }

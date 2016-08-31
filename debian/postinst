@@ -1,0 +1,12 @@
+#!/bin/bash
+SHORTCUT=/home/@USER/@PRODUCT/@PRODUCT.desktop
+
+chmod 755 /home/@USER/.scripts/start.sh
+
+chmod +x $SHORTCUT
+cp $SHORTCUT /home/@USER/Desktop/
+
+mkdir -p /home/@USER/.config/autostart
+cp $SHORTCUT /home/@USER/.config/autostart
+
+chown -R @USER:@USER /home/@USER
