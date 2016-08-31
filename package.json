@@ -1,6 +1,6 @@
 {
   "name": "smart-dispensing-system",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Smart Dispensing System Vending Application",
   "main": "index.js",
   "scripts": {
