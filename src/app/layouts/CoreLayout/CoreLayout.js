@@ -24,6 +24,8 @@ export class CoreLayout extends Component {
         const { helpActive } = this.props;
         return (
             <div onClick={this.props.reset} className={classes.layout}>
+                <BackgroundVideo />
+
                 <div className={classes.background}>
                     <ReactCSSTransitionGroup
                         className={classes.transition}
@@ -39,12 +41,12 @@ export class CoreLayout extends Component {
                 </div>
 
                 <div onClick={this.props.requestHelp} className={classes['help-icon-container']}>
-                    <HelpIcon box={true} size="4x"/>
+                    <HelpIcon box={true} size="4x" />
                 </div>
 
-                <BackgroundVideo />
                 <Shelf />
-                <div className={`${helpActive ? classes['overlay-active'] : ''} ${classes.overlay}`} />
+
+                <div className={`${helpActive && classes['overlay-active']} ${classes.overlay}`} />
             </div>
 
         );
