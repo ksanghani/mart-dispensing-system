@@ -13,8 +13,15 @@ export class PinNumber extends Component {
     }
 
     render () {
+        const { pin, error } = this.props;
+
         return (
-            <input type="password" readOnly className={`${this.props.error ? classes.shake : ''} ${classes.pin}`} value={this.props.pin} />
+            <div className={`${error ? classes.shake : ''} ${classes.layout}`}>
+                <span className={`${(pin.length > 0 && !error) ? classes.filled : ''}`}></span>
+                <span className={`${(pin.length > 1 && !error) ? classes.filled : ''}`}></span>
+                <span className={`${(pin.length > 2 && !error) ? classes.filled : ''}`}></span>
+                <span className={`${(pin.length > 3 && !error) ? classes.filled : ''}`}></span>
+            </div>
         );
     }
 }

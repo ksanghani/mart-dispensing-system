@@ -19,6 +19,7 @@ export default class DispensingView extends Component {
                 <div className={classes['item-count-container']}>
                     <ItemCount />
                 </div>
+                <p>Each item dispenses separately</p>
                 <Loader />
                 <button onClick={()=> { browserHistory.push('/retrieve-item'); }} style={{ opacity: 0, width: '150px', marginRight: '30px' }}></button>
                 <button onClick={()=> { browserHistory.push('/door-error'); }} style={{ opacity: 0, width: '150px' }}></button>

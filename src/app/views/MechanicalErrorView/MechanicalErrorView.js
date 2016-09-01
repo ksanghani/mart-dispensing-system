@@ -1,12 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import { browserHistory } from 'react-router';
-import classes from './DoorErrorView.scss';
+import classes from './MechanicalErrorView.scss';
 import Button from 'components/Button';
 import Link from 'components/Link';
-import Title from 'components/Title';
+import TextBlock from 'components/TextBlock';
 
 
-export default class DoorErrorView extends Component {
+export default class MechanicalErrorView extends Component {
     static propTypes = {
 
     };
@@ -15,14 +15,14 @@ export default class DoorErrorView extends Component {
         return (
             <div className={classes.container}>
                 <div className={classes.view}>
-                    <Title size="medium">You haven&rsquo;t taken out the item</Title>
+                    <TextBlock headline="Out of order">
+                        Sorry for the inconvenience, please proceed <br /> to the service lounge for assistance.
+                    </TextBlock>
                     <div className={classes['button-container']}>
-                        <Button label="Re-open door" onClick={() => { browserHistory.push('/pinpad'); }} />
+                        <Button label="View Direction" onClick={() => { browserHistory.push('/pinpad'); }} />
                     </div>
-                    <Title size="small">If this is not your item, please proceed to the service lounge for assistance.</Title>
-
                     <div className={classes['link-container']}>
-                        <Link label="View Direction" onClick={() => {}}/>
+                        <Link label="Done" onClick={() => {}}/>
                     </div>
                 </div>
             </div>

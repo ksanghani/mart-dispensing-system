@@ -5,7 +5,7 @@ h1 {
 
 // when modifying transition-duration, make sure to adjust
 // transitionEnterTimeout and transitionLeaveTimeout in CoreLayout
-$transition-duration: 0.5s;
+$transition-duration: 0.2s;
 $transition-timing-function: ease-in-out;
 
 .page-transition-enter {
