@@ -14,7 +14,7 @@ export default class OrderFulfilledView extends Component {
         return (
             <div className={classes.container}>
                 <div className={classes.view}>
-                    <TextBlock headline="Order Fulfilled">
+                    <TextBlock textSpacing="large" headline="Order Fulfilled">
                         Our system shows that have picked up all items on this order. <br /> Please make sure you scan the correct receipt.
                     </TextBlock>
                     <div className={classes['button-container']}>

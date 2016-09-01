@@ -1,13 +1,12 @@
 .layout {
     text-align: center;
     p {
-        margin: 0;
+        margin: -30px 0 0 0;
         font-weight: 300;
         font-size: 40px;
         line-height: 54px;
+        &.large {
+            margin-top: 60px;
+        }
     }
-}
-
-.title-container {
-    margin-bottom: 15px;
 }

@@ -5,15 +5,14 @@ import Title from 'components/Title';
 export class TextBlock extends Component {
     static propTypes = {
         headline: PropTypes.string.isRequired,
+        containerSpacing: PropTypes.string,
         children: PropTypes.node
     };
 
     render () {
         return (
             <div className={classes.layout}>
-                <div className={classes['title-container']}>
-                    <Title size="large" letterCase="uppercase">{this.props.headline}</Title>
-                </div>
+                <Title size="large" letterCase="uppercase">{this.props.headline}</Title>
                 <p>{this.props.children}</p>
             </div>
         );

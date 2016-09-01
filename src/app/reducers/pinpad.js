@@ -33,7 +33,7 @@ export function pressNumber (number) {
                     type: CORRECT_PIN
                 });
 
-                dispatch(push('/dispense'));
+                dispatch(push('/dispensing'));
 
                 dispatch(send('sds:dispense:item', pin[1], pin[2], pin[3]));
             } else {

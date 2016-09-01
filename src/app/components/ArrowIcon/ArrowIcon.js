@@ -9,7 +9,9 @@ export class ArrowIcon extends Component {
 
     render () {
         return (
-            <i className={`${this.props.box ? classes.box : null} ${classes.layout} zmdi zmdi-arrow-right zmdi-hc-${this.props.size}`} />
+            <div className={`${this.props.box ? classes.box : null}`}>
+                <i className={`${classes.layout} ${classes.shake} zmdi zmdi-arrow-right zmdi-hc-${this.props.size}`} />
+            </div>
         );
     }
 }

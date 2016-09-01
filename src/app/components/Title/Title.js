@@ -6,7 +6,7 @@ export class Title extends Component {
     static propTypes = {
         children: PropTypes.string.isRequired,
         size: PropTypes.string,
-        letterCase: PropTypes.string
+        letterCase: PropTypes.string,
     };
 
     render () {
