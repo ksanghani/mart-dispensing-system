@@ -1,11 +1,6 @@
 .layout {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 1920px;
-    height: 1080px;
-}
-
-.borderVideo {
-    z-index: 9997;
+    top: -420px;
+    left: 420px;
+    transform: rotate(90deg);
 }
