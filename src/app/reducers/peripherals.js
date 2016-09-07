@@ -1,29 +1,22 @@
 import { push } from 'react-router-redux';
 import { reset } from 'timeout';
+import { send } from 'redux-electron-ipc';
+import validator from 'validator';
 
-export const OBJECT_DETECTED = 'OBJECT_DETECTED';
 export const BARCODE_SCANNED = 'BARCODE_SCANNED';
 
 export function scanBarcode (scannedBarcode) {
     return (dispatch) => {
         dispatch(reset());
 
-        switch (scannedBarcode) {
-            case '11111111':
-                dispatch(push('order-not-found'));
-                break;
-            case '22222222':
-                dispatch(push('order-fulfilled'));
-                break;
-            default:
-                dispatch(push('/pinpad'));
-                break;
-        }
+        if (validator.isUUID(scannedBarcode, 4)) {
+            dispatch(send('order:scan', scannedBarcode));
 
-        dispatch({
-            type: BARCODE_SCANNED,
-            scannedBarcode
-        });
+            dispatch({
+                type: BARCODE_SCANNED,
+                scannedBarcode
+            });
+        }
     };
 }
 
@@ -40,12 +33,6 @@ export function dispenseItem (wasDispensed) {
 }
 
 const ACTION_HANDLERS = {
-    [OBJECT_DETECTED]: (state, action) => {
-        return {
-            ...state,
-            isObjectInRange: action.isObjectInRange
-        };
-    },
     [BARCODE_SCANNED]: (state, action) => {
         return {
             ...state,

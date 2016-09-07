@@ -13,6 +13,7 @@ import routes from './routes';
 import { timeoutMiddleware } from './timeout';
 import ipcEvents from 'actions/ipc';
 import { scanBarcode, dispenseItem } from 'reducers/peripherals';
+import { orderFound, orderNotFound, orderAlreadyFulfilled } from 'reducers/session';
 
 const router = routerMiddleware(browserHistory);
 const ipc    = createIpc(ipcEvents);
@@ -27,6 +28,9 @@ const history = syncHistoryWithStore(browserHistory, store);
 
 if (process.env.NODE_ENV !== 'production') {
     window.scanBarcode = (barcode) => store.dispatch(scanBarcode(barcode));
+    window.orderFound = (order) => store.dispatch(orderFound(order));
+    window.orderNotFound = () => store.dispatch(orderNotFound());
+    window.orderAlreadyFulfilled = () => store.dispatch(orderAlreadyFulfilled());
     window.dispenseItem = (wasDispensed) => store.dispatch(dispenseItem(wasDispensed));
 }
 

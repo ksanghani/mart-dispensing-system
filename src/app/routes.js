@@ -17,7 +17,7 @@ export default (
     <Route path="/" component={CoreLayout}>
         <IndexRoute component={HomeView} />
         <Route path="order-not-found" component={OrderNotFoundView} />
-        <Route path="order-fulfilled" component={OrderFulfilledView} />
+        <Route path="order-already-fulfilled" component={OrderFulfilledView} />
         <Route path="thanks" component={ThanksView} />
         <Route path="unable-to-dispense" component={UnableToDispenseView} />
         <Route path="pinpad" component={PinPadView} />
