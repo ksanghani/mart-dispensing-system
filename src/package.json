@@ -5,7 +5,10 @@
   },
   "dependencies": {
     "debug": "^2.2.0",
-    "wm-peripheral-client": "^2.0.2",
-    "wm-sds-client": "^1.0.0"
+    "serialport": "^4.0.1",
+    "wm-cloud-client": "^2.1.1",
+    "wm-fixture": "^2.0.0",
+    "wm-fixture-setup": "^2.1.0",
+    "wm-peripheral-barcode": "^1.0.1"
   }
 }
