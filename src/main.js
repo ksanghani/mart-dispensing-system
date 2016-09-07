@@ -18,7 +18,7 @@ app.on('ready', () => {
         win.toggleDevTools();
     } else {
         win.loadURL(`file://${__dirname}/app/index.html`);
-        global.dirname = __dirname;
+        global.__dirname = __dirname;
     }
 
     win.on('closed', () => {
