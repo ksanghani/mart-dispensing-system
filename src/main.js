@@ -1,28 +1,20 @@
 process.env.NODE_CONFIG_DIR = `${__dirname}/config`;
-process.env.NODE_ENV = require('./package.json').env || '';
+process.env.NODE_ENV        = require('./package.json').env || '';
 
-const debug                           = require('debug')('fixture:sds');
-const { app, BrowserWindow, ipcMain } = require('electron');
+const debug   = require('debug')('fixture:sds');
+const config  = require('config');
+const Fixture = require('wm-fixture');
 
-let win = null;
+debug(`Environment: ${process.env.NODE_ENV}`);
 
-app.commandLine.appendSwitch('touch-events', 'enabled');
+const fixture = new Fixture(config);
 
-app.on('ready', () => {
-    win = new BrowserWindow({
-        kiosk: !process.env.DEV
-    });
-
+fixture.on('ready', () => {
     if (process.env.DEV) {
-        win.loadURL('http://localhost:8080');
-        win.toggleDevTools();
+        fixture.window.loadURL('http://localhost:8080');
+        fixture.window.toggleDevTools();
     } else {
-        win.loadURL(`file://${__dirname}/app/index.html`);
+        fixture.window.loadURL(`file://${__dirname}/app/index.html`);
         global.__dirname = __dirname;
     }
-
-    win.on('closed', () => {
-        win = null;
-        app.quit();
-    });
 });
