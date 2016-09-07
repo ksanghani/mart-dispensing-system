@@ -12,7 +12,7 @@ import reducers from 'reducers';
 import routes from './routes';
 import { timeoutMiddleware } from './timeout';
 import ipcEvents from 'actions/ipc';
-import { scanBarcode, senseProximity, dispenseItem } from 'reducers/peripherals';
+import { scanBarcode, dispenseItem } from 'reducers/peripherals';
 
 const router = routerMiddleware(browserHistory);
 const ipc    = createIpc(ipcEvents);
@@ -27,7 +27,6 @@ const history = syncHistoryWithStore(browserHistory, store);
 
 if (process.env.NODE_ENV !== 'production') {
     window.scanBarcode = (barcode) => store.dispatch(scanBarcode(barcode));
-    window.senseProximity = (isObjectInRange) => store.dispatch(senseProximity(isObjectInRange));
     window.dispenseItem = (wasDispensed) => store.dispatch(dispenseItem(wasDispensed));
 }
 

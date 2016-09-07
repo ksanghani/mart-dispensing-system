@@ -4,21 +4,6 @@ import { reset } from 'timeout';
 export const OBJECT_DETECTED = 'OBJECT_DETECTED';
 export const BARCODE_SCANNED = 'BARCODE_SCANNED';
 
-export function senseProximity (isObjectInRange) {
-    return (dispatch, getState)  => {
-        if (isObjectInRange)
-            dispatch(reset());
-
-        if (getState().routing.locationBeforeTransitions.pathname === '/')
-            dispatch(push('/welcome'));
-
-        dispatch({
-            type: OBJECT_DETECTED,
-            isObjectInRange
-        });
-    };
-}
-
 export function scanBarcode (scannedBarcode) {
     return (dispatch) => {
         dispatch(reset());

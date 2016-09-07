@@ -1,15 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import classes from './HomeView.scss';
-import { senseProximity } from 'reducers/peripherals';
 import ArrowIcon from 'components/ArrowIcon';
 import Logo from 'components/Logo';
 import TextBlock from 'components/TextBlock';
 
-
 export class HomeView extends Component {
     static propTypes = {
-        senseProximity: PropTypes.func.isRequired
+
     };
 
     render () {
@@ -17,7 +15,6 @@ export class HomeView extends Component {
             <div className={classes.container}>
                 <div
                     className={classes.view}
-                    onClick={() => this.props.senseProximity(true)}
                 >
                     <div className={classes['logo-container']}>
                         <Logo />
@@ -34,4 +31,4 @@ export class HomeView extends Component {
     }
 }
 
-export default connect(null, { senseProximity })(HomeView);
+export default connect()(HomeView);
