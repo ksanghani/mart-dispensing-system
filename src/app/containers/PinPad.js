@@ -9,7 +9,7 @@ export class PinPad extends Component {
     static propTypes = {
         pressNumber: PropTypes.func.isRequired,
         pin: PropTypes.string.isRequired,
-        error: PropTypes.string.isRequired
+        error: PropTypes.bool.isRequired
     };
 
     render () {
@@ -17,7 +17,7 @@ export class PinPad extends Component {
 
         return (
             <div>
-                <PinNumber pin={error || pin} error={error} />
+                <PinNumber pin={pin} error={error} />
 
                 <Error
                     show={error}

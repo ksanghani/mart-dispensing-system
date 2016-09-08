@@ -9,7 +9,7 @@ export class PinNumber extends Component {
 
     static propTypes = {
         pin: PropTypes.string.isRequired,
-        error: PropTypes.string
+        error: PropTypes.bool
     }
 
     render () {
@@ -17,10 +17,10 @@ export class PinNumber extends Component {
 
         return (
             <div className={`${error ? classes.shake : ''} ${classes.layout}`}>
-                <span className={`${(pin.length > 0 && !error) ? classes.filled : ''}`}></span>
-                <span className={`${(pin.length > 1 && !error) ? classes.filled : ''}`}></span>
-                <span className={`${(pin.length > 2 && !error) ? classes.filled : ''}`}></span>
-                <span className={`${(pin.length > 3 && !error) ? classes.filled : ''}`}></span>
+                <span className={`${(pin.length > 0) ? classes.filled : ''}`}></span>
+                <span className={`${(pin.length > 1) ? classes.filled : ''}`}></span>
+                <span className={`${(pin.length > 2) ? classes.filled : ''}`}></span>
+                <span className={`${(pin.length > 3) ? classes.filled : ''}`}></span>
             </div>
         );
     }

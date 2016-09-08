@@ -41,10 +41,11 @@ export function pressNumber (number) {
                     type: INCORRECT_PIN
                 });
             }
-
-            dispatch({
-                type: RESET_PIN_NUMBER
-            });
+            setTimeout(() => {
+                dispatch({
+                    type: RESET_PIN_NUMBER
+                });
+            }, 750);
         }
     };
 }
@@ -54,7 +55,7 @@ const ACTION_HANDLERS = {
         return {
             ...state,
             pin: state.pin + action.number,
-            error: ''
+            error: false
         };
     },
     [RESET_PIN_NUMBER]: (state) => {
@@ -66,20 +67,20 @@ const ACTION_HANDLERS = {
     [CORRECT_PIN]: (state) => {
         return {
             ...state,
-            error: ''
+            error: false
         };
     },
     [INCORRECT_PIN]: (state) => {
         return {
             ...state,
-            error: state.pin
+            error: true
         };
     }
 };
 
 const initialState = {
     pin: '',
-    error: ''
+    error: false
 };
 
 export default function reducer (state = initialState, action) {
