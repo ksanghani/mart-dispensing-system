@@ -9,7 +9,7 @@ export class HelpIcon extends Component {
 
     render () {
         return (
-            <i className={`${this.props.box ? classes.box : null} ${classes.layout} zmdi zmdi-help-outline zmdi-hc-${this.props.size}`} />
+            <i className={`${this.props.box && classes.box} zmdi zmdi-help-outline zmdi-hc-${this.props.size}`} />
         );
     }
 }

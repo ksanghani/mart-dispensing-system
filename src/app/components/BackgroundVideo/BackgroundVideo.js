@@ -1,17 +1,12 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import classes from './BackgroundVideo.scss';
+import Video from 'assets/background.mp4';
 
 export class BackgroundVideo extends Component {
-
-    static propTypes = {
-        src: PropTypes.string.isRequired,
-        borderVideo: PropTypes.bool
-    };
-
     render () {
         return (
-            <video loop autoPlay className={`${this.props.borderVideo ? classes.borderView : null} ${classes.layout}`}>
-                <source src={this.props.src}  type="video/mp4" />
+            <video loop autoPlay className={classes.layout}>
+                <source src={Video} type="video/mp4" />
             </video>
         );
     }

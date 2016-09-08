@@ -1,12 +1,12 @@
 {
   "name": "smart-dispensing-system",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "description": "Smart Dispensing System Vending Application",
   "main": "index.js",
   "scripts": {
     "setup": "wget -N -i assets.txt -P src/app/assets",
-    "start": "./node_modules/.bin/electron dist",
-    "start:dev": "DEV=true ./node_modules/.bin/electron dist",
+    "start": "DEBUG=fixture* ./node_modules/.bin/electron dist",
+    "start:dev": "DEBUG=fixture* DEV=true ./node_modules/.bin/electron dist",
     "build": "./node_modules/.bin/gulp build",
     "build:dev": "./node_modules/.bin/gulp",
     "package": "./node_modules/.bin/gulp package",
