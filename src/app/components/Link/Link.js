@@ -5,15 +5,18 @@ export class Link extends Component {
     static propTypes = {
         label: PropTypes.string.isRequired,
         onClick: PropTypes.func.isRequired,
-        size: PropTypes.string
+        size: PropTypes.string,
+        style: PropTypes.object
     };
 
     render () {
         const size = this.props.size || '';
+        const style = this.props.style;
 
         return (
             <button
                 onClick={this.props.onClick}
+                style={ style }
                 className={`${classes.layout} ${classes[this.props.size]}`}>
                 {this.props.label}
             </button>
