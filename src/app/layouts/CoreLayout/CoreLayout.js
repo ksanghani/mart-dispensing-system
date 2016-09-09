@@ -31,8 +31,8 @@ export class CoreLayout extends Component {
                         className={classes.transition}
                         component="div"
                         transitionName="page-transition"
-                        transitionEnterTimeout={200}
-                        transitionLeaveTimeout={200}
+                        transitionEnterTimeout={500}
+                        transitionLeaveTimeout={500}
                     >
                         {React.cloneElement(this.props.children, {
                             key: this.props.location.pathname

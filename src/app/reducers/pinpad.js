@@ -45,7 +45,7 @@ export function pressNumber (number) {
                 dispatch({
                     type: RESET_PIN_NUMBER
                 });
-            }, 750);
+            }, 500);
         }
     };
 }

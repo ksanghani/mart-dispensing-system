@@ -11,18 +11,18 @@
     margin: 0 auto;
 }
 
-.shake {
-    animation: shake 1.5s cubic-bezier(.36,.07,.19,.97) infinite;
+.snap {
+    animation: snap 1.5s cubic-bezier(.36,.07,.19,.97) infinite;
     transform: translate3d(90deg, 0, 0) rotate(90deg);
     backface-visibility: hidden;
     perspective: 1000px;
 }
 
-@keyframes shake {
+@keyframes snap {
     0% {
         transform: translate3d(0, 0, 0) rotate(90deg);
     }
-    70% {
+    90% {
         transform: translate3d(0, 9px, 0) rotate(90deg);
     }
     100% {
