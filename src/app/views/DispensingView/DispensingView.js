@@ -1,9 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import { browserHistory } from 'react-router';
 import classes from './DispensingView.scss';
-import Button from 'components/Button';
 import Loader from 'components/Loader';
-import ItemCount from 'components/ItemCount';
+import ItemTotal from 'containers/ItemTotal';
 import Title from 'components/Title';
 
 
@@ -16,13 +14,11 @@ export default class DispensingView extends Component {
         return (
             <div className={classes.container}>
                 <Title letterCase="uppercase">Dispensing</Title>
-                <div className={classes['item-count-container']}>
-                    <ItemCount />
+                <div className={classes['item-total-container']}>
+                    <ItemTotal />
                 </div>
                 <p>Each item dispenses separately</p>
                 <Loader />
-                <button onClick={()=> { browserHistory.push('/retrieve-item'); }} style={{ opacity: 0, width: '150px', marginRight: '30px' }}></button>
-                <button onClick={()=> { browserHistory.push('/door-error'); }} style={{ opacity: 0, width: '150px' }}></button>
             </div>
         );
     }

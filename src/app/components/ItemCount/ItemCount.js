@@ -3,16 +3,14 @@ import classes from './ItemCount.scss';
 
 export class ItemCount extends Component {
     static propTypes = {
+        itemClassName: PropTypes.oneOf(['current', 'total']).isRequired,
+        amount: PropTypes.string.isRequired
     };
 
     render () {
-
+        const { itemClassName, amount } = this.props;
         return (
-            <div className={classes.layout}>
-                <span>1</span>
-                <span>of</span>
-                <span>1</span>
-            </div>
+            <span className={`${classes[itemClassName]}`}>{amount}</span>
         );
     }
 }

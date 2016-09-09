@@ -1,21 +1,23 @@
-.layout {
-    span {
-        vertical-align: middle;
-        font-weight: 400;
-        text-align: center;
-        &:nth-child(1) {
-            font-size: 200px;
-            font-weight: 300;
-        }
-        &:nth-child(2) {
+span {
+    vertical-align: middle;
+    font-weight: 400;
+    text-align: center;
+    &.current {
+        font-size: 200px;
+        font-weight: 300;
+        &:after {
+            content: "of";
             font-size: 24px;
             text-transform: uppercase;
             font-weight: 500;
-            margin-left: -10px;
+            margin-top: -46px;
             margin-right: 18px;
+            margin-left: -10px;
+            vertical-align: middle;
+            display: inline-block;
         }
-        &:nth-child(3) {
-            font-size: 72px;
-        }
+    }
+    &.total {
+        font-size: 72px;
     }
 }
