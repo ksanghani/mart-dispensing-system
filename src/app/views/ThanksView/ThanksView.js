@@ -14,17 +14,11 @@ export default class ThanksView extends Component {
     render () {
         return (
             <div className={classes.container}>
-                <div className={classes['logo-container']}>
-                    <Logo />
-                </div>
-                <div className={classes.view}>
-                    <TextBlock headline="Thank You For Shopping">
-                        If you have any quick questions or comments, contact us at CS@with.me <br /> or give us a call at 1-800-927-7671
-                    </TextBlock>
-                    <div className={classes['button-container']}>
-                        <Button label="Done" onClick={() => { browserHistory.push('/'); }} />
-                    </div>
-                </div>
+                <Logo style={{ margin: '60px 0 90px 0' }}/>
+                <TextBlock headline="Thank You For Shopping">
+                    If you have any quick questions or comments, contact us at CS@with.me <br /> or give us a call at 1-800-927-7671
+                </TextBlock>
+                <Button label="Done" style={{ marginTop: '60px' }} onClick={() => { browserHistory.push('/'); }} />
             </div>
         );
     }

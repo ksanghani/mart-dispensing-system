@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import { browserHistory } from 'react-router';
 import classes from './OrderFulfilledView.scss';
-import Button from 'components/Button';
+import HelpButton from 'containers/HelpButton';
 import TextBlock from 'components/TextBlock';
 
 
@@ -13,14 +12,10 @@ export default class OrderFulfilledView extends Component {
     render () {
         return (
             <div className={classes.container}>
-                <div className={classes.view}>
-                    <TextBlock textSpacing="large" headline="Order Fulfilled">
-                        Our system shows that have picked up all items on this order. <br /> Please make sure you scan the correct receipt.
-                    </TextBlock>
-                    <div className={classes['button-container']}>
-                        <Button label="Help" onClick={() => { browserHistory.push('/'); }} />
-                    </div>
-                </div>
+                <TextBlock textSpacing="large" headline="Order Fulfilled">
+                    Our system shows that have picked up all items on this order. <br /> Please make sure you scan the correct receipt.
+                </TextBlock>
+                <HelpButton label="Help" style={{ marginTop: '174px' }} />
             </div>
         );
     }

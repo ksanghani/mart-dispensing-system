@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import { browserHistory } from 'react-router';
 import classes from './OrderNotFoundView.scss';
-import Button from 'components/Button';
+import HelpButton from 'containers/HelpButton';
 import TextBlock from 'components/TextBlock';
 
 
@@ -13,14 +12,10 @@ export default class OrderNotFoundView extends Component {
     render () {
         return (
             <div className={classes.container}>
-                <div className={classes.view}>
-                    <TextBlock textSpacing="large" headline="Order Not Found">
-                        Sorry we can&rsquo;t find your order. Please make sure <br /> you&rsquo;re scanning a WithMe receipt for express pickup at this location.
-                    </TextBlock>
-                    <div className={classes['button-container']}>
-                        <Button label="Help" onClick={() => { browserHistory.push('/'); }} />
-                    </div>
-                </div>
+                <TextBlock textSpacing="large" headline="Order Not Found">
+                    Sorry we can&rsquo;t find your order. Please make sure <br /> you&rsquo;re scanning a WithMe receipt for express pickup at this location.
+                </TextBlock>
+                <HelpButton label="Help" style={{ marginTop: '174px' }}/>
             </div>
         );
     }
