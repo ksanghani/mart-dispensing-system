@@ -18,7 +18,7 @@ export default class DispensingView extends Component {
                     <ItemTotal />
                 </div>
                 <p>Each item dispenses separately</p>
-                <Loader />
+                <Loader style={{ marginTop: '130px' }}/>
             </div>
         );
     }

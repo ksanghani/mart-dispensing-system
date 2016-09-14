@@ -1,10 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classes from './Loader.scss';
 
 export class Loader extends Component {
+
+    static propTypes = {
+        style: PropTypes.object
+    }
     render () {
+        const { style } = this.props;
         return (
-            <svg className={classes['loader-container']} width="238" height="149" viewBox="0 0 672 318">
+            <svg style={style} className={classes['loader-container']} width="119" height="74" viewBox="0 0 672 318">
                 <defs>
                     <linearGradient id="loaderBodyGradient" x1="100%" y1="100%">
                         <stop className={classes.loaderBodyGradientStop1} offset="0%"/>
