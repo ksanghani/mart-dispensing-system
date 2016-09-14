@@ -1,3 +1,14 @@
+.loader-container {
+    opacity: 0;
+    animation:fadeIn ease-in 1;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+.loader-container-fade-in {
+    animation-delay: 0.2s;
+}
+
 .loader-body {
     stroke-dasharray: 2179;
     stroke-dashoffset: 2179;
@@ -12,9 +23,11 @@
     stop-color: #654c9c;
 }
 
-
 @keyframes moveLoaderBody {
-    to {
-        stroke-dashoffset: -2179;
-    }
+    to { stroke-dashoffset: -2179; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }

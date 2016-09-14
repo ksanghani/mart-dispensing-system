@@ -21,23 +21,33 @@ export class CoreLayout extends Component {
     };
 
     render () {
-        const { helpActive } = this.props;
+        const { helpActive, location } = this.props;
         return (
             <div onClick={this.props.reset} className={classes.layout}>
                 <BackgroundVideo />
 
                 <div className={classes.background}>
-                    <ReactCSSTransitionGroup
-                        className={classes.transition}
-                        component="div"
-                        transitionName="page-transition"
-                        transitionEnterTimeout={500}
-                        transitionLeaveTimeout={500}
-                    >
-                        {React.cloneElement(this.props.children, {
+
+                    {
+                        location.pathname === '/dispensing'
+                        ?
+                        React.cloneElement(this.props.children, {
                             key: this.props.location.pathname
-                        })}
-                    </ReactCSSTransitionGroup>
+                        })
+                        :
+                        <ReactCSSTransitionGroup
+                            className={classes.transition}
+                            component="div"
+                            transitionName="page-transition"
+                            transitionEnterTimeout={500}
+                            transitionLeaveTimeout={500}
+                        >
+                            {React.cloneElement(this.props.children, {
+                                key: this.props.location.pathname
+                            })}
+                        </ReactCSSTransitionGroup>
+                    }
+
                 </div>
 
                 <div onClick={this.props.requestHelp} className={classes['help-icon-container']}>

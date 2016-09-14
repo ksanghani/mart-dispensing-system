@@ -11,13 +11,16 @@ export default class DispensingView extends Component {
     };
 
     render () {
+        const dispensingFadeClasses = `${classes['dispensing-fade']} ${classes['dispensing-fade-in']}`;
         return (
             <div className={classes.container}>
-                <Title letterCase="uppercase">Dispensing</Title>
-                <div className={classes['item-total-container']}>
-                    <ItemTotal />
+                <div className={dispensingFadeClasses}>
+                    <Title letterCase="uppercase">Dispensing</Title>
+                    <div className={classes['item-total-container']}>
+                        <ItemTotal />
+                    </div>
+                    <p>Each item dispenses separately</p>
                 </div>
-                <p>Each item dispenses separately</p>
                 <Loader style={{ marginTop: '130px' }}/>
             </div>
         );
