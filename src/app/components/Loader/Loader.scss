@@ -10,9 +10,9 @@
 }
 
 .loader-body {
-    stroke-dasharray: 2179;
-    stroke-dashoffset: 2179;
-    animation: moveLoaderBody 7s linear forwards infinite;
+    stroke-dasharray: 800 5118;
+    stroke-dashoffset: 800;
+    animation: moveLoaderBody 8s cubic-bezier(.47,.21,.21,.51) infinite;
 }
 
 .loaderBodyGradientStop1 {
@@ -24,7 +24,7 @@
 }
 
 @keyframes moveLoaderBody {
-    to { stroke-dashoffset: -2179; }
+    to { stroke-dashoffset: -5118; }
 }
 
 @keyframes fadeIn {
