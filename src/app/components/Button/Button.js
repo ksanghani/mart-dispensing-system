@@ -6,14 +6,19 @@ export class Button extends Component {
         label: PropTypes.string.isRequired,
         onClick: PropTypes.func.isRequired,
         size: PropTypes.string,
-        hidden: PropTypes.bool
+        hidden: PropTypes.bool,
+        style: PropTypes.object
     };
+
+    static defaultProps = {
+        style: {}
+    }
 
     render () {
         const size = this.props.size || '';
 
         return (
-            <button
+            <button style={this.props.style}
                 onClick={this.props.onClick}
                 className={`${classes.layout} ${size}`}>
                 {this.props.label}

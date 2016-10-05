@@ -5,7 +5,6 @@ import Button from 'components/Button';
 import Logo from 'components/Logo';
 import TextBlock from 'components/TextBlock';
 
-
 export default class ThanksView extends Component {
     static propTypes = {
 

@@ -5,7 +5,7 @@ import { reset } from 'timeout';
 import { requestHelp } from 'reducers/help';
 import BackgroundVideo from 'components/BackgroundVideo';
 import HelpIcon from 'components/HelpIcon';
-import Shelf from 'containers/Shelf';
+import HelpPanelContainer from 'containers/HelpPanelContainer';
 
 import classes from './CoreLayout.scss';
 import 'wm-fixture-styles/dist/main.css';
@@ -44,7 +44,7 @@ export class CoreLayout extends Component {
                     <HelpIcon box={true} size="4x" />
                 </div>
 
-                <Shelf />
+                <HelpPanelContainer />
 
                 <div className={`${helpActive && classes['overlay-active']} ${classes.overlay}`} />
             </div>
