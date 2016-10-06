@@ -7,11 +7,12 @@ export class HelpPanel extends Component {
     static propTypes = {
         children: PropTypes.node,
         isActive: PropTypes.bool.isRequired,
-        cancelHelp: PropTypes.func.isRequired
+        requestHelp: PropTypes.func.isRequired,
+        toggleHelp: PropTypes.func.isRequired
     };
 
     render () {
-        const { isActive, cancelHelp } = this.props;
+        const { isActive, toggleHelp } = this.props;
 
         return (
             <div className={`${isActive ? classes.active : ''} ${classes.layout}`}>
@@ -32,11 +33,11 @@ export class HelpPanel extends Component {
                     <Button
                         label="Request Help"
                         style={{ marginBottom: 92 }}
-                        onClick={() => {}}
+                        onClick={this.props.requestHelp}
                     />
                 </div>
 
-                <Link onClick={cancelHelp} size="large" label="Close" />
+                <Link onClick={toggleHelp} size="large" label="Close" />
             </div>
         );
     }
