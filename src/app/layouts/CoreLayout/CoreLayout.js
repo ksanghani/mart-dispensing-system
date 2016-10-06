@@ -2,10 +2,10 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { reset } from 'timeout';
-import { requestHelp } from 'reducers/help';
+import { toggleHelp } from 'reducers/help';
 import BackgroundVideo from 'components/BackgroundVideo';
 import HelpIcon from 'components/HelpIcon';
-import Shelf from 'containers/Shelf';
+import HelpPanelContainer from 'containers/HelpPanelContainer';
 
 import classes from './CoreLayout.scss';
 import 'wm-fixture-styles/dist/main.css';
@@ -16,12 +16,12 @@ export class CoreLayout extends Component {
         children: PropTypes.node,
         location: PropTypes.object,
         reset: PropTypes.func.isRequired,
-        helpActive: PropTypes.bool.isRequired,
-        requestHelp: PropTypes.func.isRequired
+        showHelpPanel: PropTypes.bool.isRequired,
+        toggleHelp: PropTypes.func.isRequired
     };
 
     render () {
-        const { helpActive } = this.props;
+        const { showHelpPanel } = this.props;
         return (
             <div onClick={this.props.reset} className={classes.layout}>
                 <BackgroundVideo />
@@ -40,13 +40,13 @@ export class CoreLayout extends Component {
                     </ReactCSSTransitionGroup>
                 </div>
 
-                <div onClick={this.props.requestHelp} className={classes['help-icon-container']}>
+                <div onClick={this.props.toggleHelp} className={classes['help-icon-container']}>
                     <HelpIcon box={true} size="4x" />
                 </div>
 
-                <Shelf />
+                <HelpPanelContainer />
 
-                <div className={`${helpActive && classes['overlay-active']} ${classes.overlay}`} />
+                <div className={`${showHelpPanel && classes['overlay-active']} ${classes.overlay}`} />
             </div>
 
         );
@@ -55,8 +55,8 @@ export class CoreLayout extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        helpActive: state.help.helpActive
+        showHelpPanel: state.help.showHelpPanel
     };
 };
 
-export default connect(mapStateToProps, { reset, requestHelp })(CoreLayout);
+export default connect(mapStateToProps, { reset, toggleHelp })(CoreLayout);

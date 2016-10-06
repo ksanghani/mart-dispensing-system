@@ -14,7 +14,7 @@ export class Link extends Component {
         return (
             <button
                 onClick={this.props.onClick}
-                className={`${classes.layout} ${classes[this.props.size]}`}>
+                className={`${classes.layout} ${classes[size]}`}>
                 {this.props.label}
             </button>
         );

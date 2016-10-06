@@ -14,17 +14,22 @@ import { timeoutMiddleware } from './timeout';
 import ipcEvents from 'actions/ipc';
 import { scanBarcode, dispenseItem } from 'reducers/peripherals';
 import { orderFound, orderNotFound, orderAlreadyFulfilled } from 'reducers/session';
+import createSagaMiddleware from 'redux-saga';
+import rootSagas from 'sagas';
 
-const router = routerMiddleware(browserHistory);
-const ipc    = createIpc(ipcEvents);
+const router         = routerMiddleware(browserHistory);
+const ipc            = createIpc(ipcEvents);
+const sagaMiddleware = createSagaMiddleware();
 
-let middleware = [timeoutMiddleware, router, thunk, ipc];
+let middleware = [timeoutMiddleware, router, thunk, sagaMiddleware, ipc];
 
 if (process.env.NODE_ENV !== 'production')
     middleware = [...middleware, logger()];
 
 const store = createStore(reducers, applyMiddleware(...middleware));
 const history = syncHistoryWithStore(browserHistory, store);
+
+rootSagas.forEach(saga => sagaMiddleware.run(saga));
 
 if (process.env.NODE_ENV !== 'production') {
     window.scanBarcode = (barcode) => store.dispatch(scanBarcode(barcode));

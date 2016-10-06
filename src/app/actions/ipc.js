@@ -1,5 +1,6 @@
 import { scanBarcode, dispenseItem } from 'reducers/peripherals';
 import { orderFound, orderNotFound, orderAlreadyFulfilled } from 'reducers/session';
+import { receiveHelp } from 'reducers/help';
 
 export default {
     'peripherals:barcode:data': (event, barcode) => scanBarcode(barcode),
@@ -7,5 +8,6 @@ export default {
     'order:not-found': () => orderNotFound(),
     'order:already-fulfilled': () => orderAlreadyFulfilled(),
     'sds:dispense:success': () => dispenseItem(true),
-    'sds:dispense:failure': () => dispenseItem(false)
+    'sds:dispense:failure': () => dispenseItem(false),
+    help: (event, payload) => receiveHelp(payload.helpRequest)
 };
